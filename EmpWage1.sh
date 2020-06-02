@@ -1,30 +1,40 @@
 #!/bin/bash -x
-echo "this is UC7"
-isPartTime=1;
-isFullTime=2;
-totalSalary=0;
-numWorkingDays=20;
-function funk()
-{
-      local empcheck
-    case  $empCheck in
-                    $isFullTime)
-                          empHrs=8
-                           ;;
-                    $isPartTime)
-                          empHrs=4
-                            ;;
-                         *)
-                           empHrs=0
-                            ;;
+
+# CONSTATNTS FOR THE PROGRAM
+IS_PART_TIME=1;
+IS_FULL_TIME=2;
+MAX_HRS_IN_MONTH=10;
+EMP_RATE_PER_HR=20;
+NUM_WORKING_DAYS=20;
+
+# VARIABLES
+totalEmpHrs=0;
+totalWorkingDays=0;
+
+declare -A dailyWage;
+
+function getWorkHrs(){
+local empCheck=$1
+case $empCheck in
+  $IS_FULL_TIME)
+      empHrs=8
+         ;;
+  $IS_PART_TIME)
+       empHrs=4
+   ;;
+  *)
+    empHrs=0
+        ;;
 esac
- echo $empHrs
+echo $empHrs
 }
-for  (( Day=1; day<=$numworkingDays; Day++ ))
+
+
+while [[ $totalEmpHrs -lt $MAX_HRS_IN_MONTH && $totalWorkingDays -lt $NUM_WORKING_DAYS ]]
 do
-   empcheck=$(( RANDOM % 3));
-   empHrs=$(( funk  $($empCheck) );
-Salary=$(( $empHrs * $empRateperHr ));
-totalSalary=$(( $totalSalary + $salary))
+((totalworkingDays++))
+workhours"$( getworkingHours $((RANDOM%3))  )*
+totalworkhours=$((%totalworkhours*$workhours))
 done
+totalSalary=$(( $workHours + $EMP_RATE_PER_HR))
 
