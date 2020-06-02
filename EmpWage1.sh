@@ -1,4 +1,5 @@
 #!/bin/bash -x
+echo "this is UC7"
 isPartTime=1;
 isFullTime=2;
 totalSalary=0;
