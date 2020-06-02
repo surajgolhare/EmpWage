@@ -1,4 +1,5 @@
 #!/bin/bash -x
+
 echo "Welcome to employee Wage computation Program"
 isPresent=$(( RANDOM % 2 ))
 if [ $isPresent -eq 1 ]
